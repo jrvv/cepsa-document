@@ -1,0 +1,345 @@
+* {
+  /*  font-family: 'flamabasic';*/
+  color: #1f303e;
+}
+:root {
+  font-size: 15px;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.ar-dashboard-bar {
+  border-radius: 0.3rem;
+  margin: 0 0rem;
+  padding: 0.625rem 0.8rem;
+  font-family: "flamabook", sans serif !important;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #1f303e;
+  height: 68px !important;
+}
+
+.tdgchart-tooltip-name,
+.tdgchart-tooltip-label {
+  font-family: "flamabasic" !important;
+  font-size: 0.8rem !important;
+}
+
+.tdgchart-tooltip-value {
+  font-family: "flamabasic" !important;
+  font-size: 0.8rem !important;
+}
+
+.ar-menu,
+.ar-grid-column-menu.ar-panel {
+  font-family: "flamabasic";
+  font-size: 14px;
+}
+
+.ar-tab-navigator .ar-tab {
+  font-family: "flamamedium";
+  font-size: 14px;
+}
+
+/*=============================================
+=                DASHBOARD BAR                =
+=============================================*/
+
+.horizontal-scroll-indicator-wrapper {
+  display: none;
+}
+
+.vertical-scroll-indicator-wrapper {
+  display: none;
+}
+
+.ar-panel > .title-bar {
+  border: none;
+}
+
+.arDashboardBarButtonSelected .tab-label {
+  color: #ffffff;
+}
+
+#ARDashboard_content {
+  outline: none;
+  overflow: auto !important;
+  height: calc(100% - 68px) !important;
+}
+
+.ar-grid-status-bar {
+  font-size: 1rem;
+  font-family: "flamabook";
+  background-color: #eeeded;
+}
+
+.ar-grid-status-paging-display .paging-icon.disabled {
+  cursor: default;
+  color: #aeaeae;
+  font-size: 1rem;
+}
+
+.ar-grid-status-paging-display .paging-icon {
+  font-size: 1rem;
+
+  color: #222d40;
+}
+
+.ar-grid-status-paging-display .editable-paging-value {
+  width: 63px;
+
+  text-align: center;
+
+  border: 1px solid #bcbcbc;
+  padding: 0px;
+}
+
+#ARDashboard_layout_0_content {
+  background-color: white;
+}
+
+.template-parent,
+div[role="tabpanel"] {
+  height: 100% !important;
+  width: 100% !important;
+  /*   display: flex;
+    justify-content: start;
+    align-items: center;*/
+  background: #f4f4f8;
+}
+
+.ar-dashboard-component .title-bar {
+  font-size: 14px;
+  border-bottom: 1px solid #cacaca;
+}
+
+/* Ocultar hamburguesa del menu general. Al pinchar sobre la imagen sigue saliendo el menú de opciones de la hamburguesa, para ello
+ deberiamos poner la propiedad visibility en .ibx-glyph-bars pero entonces no se muestra la imagen ONIPLED */
+.ibx-glyph-bars:before {
+  visibility: hidden !important;
+}
+
+/* poner imagen del cliente donde salía la hamburguesa. El logo que usemos ha de tener el fondo transparente (.png) y la altura del logo es la que usamos en la propiedad height de esta clase. ONIPLED */
+.ar-panel.ar-button.ibx-icons.ibx-glyph-bars.sidebar-hamburger-button {
+  height: 50px !important;
+  width: 227px !important;
+  background-color: transparent !important;
+  border-left: 0px !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  vertical-align: middle !important;
+  margin-left: 0px !important;
+  margin-right: 12px !important;
+  margin-top: 6px !important;
+  border: none;
+  cursor: pointer;
+  background-image: url("data:image/png;base64,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") !important;
+}
+
+.ar-dashboard-bar.title-bar .ar-tabs .ar-tab[role="tab"].selected {
+  background: #1f303e;
+  color: #ffffff !important;
+}
+
+div[id$="_ft"] {
+  display: none;
+}
+
+.ar-dashboard-bar.title-bar .ar-tabs .ar-tab[role="tab"] {
+  border-radius: 0.3rem;
+  margin: 0 0.5rem;
+  font-size: 1rem;
+}
+
+.ar-dashboard-component {
+  box-shadow: none !important;
+}
+
+.ibx-icons {
+  font-family: "ibx Icons" !important;
+}
+
+:focus {
+  outline: none;
+}
+
+.cp-report {
+  background-color: #ffffff !important;
+  height: inherit;
+  padding: 12px;
+  background: white;
+  border-radius: 11px;
+}
+
+.cp-report .titleKPI {
+  padding-bottom: 8px;
+}
+
+.cp-title {
+  font-size: 41px;
+  padding: 12px;
+}
+
+.cp-textLong {
+  max-width: 100%;
+  height: 145px;
+  padding: 7px 5px 7px 15px;
+  /* text-indent: 36px; */
+  line-height: 26px;
+}
+
+.cp-kpiBox .arGridColumnHeading {
+  display: none;
+}
+
+.cp-kpiBox,
+.cp-chart {
+  padding: 5px;
+  background: white;
+  border-radius: 11px;
+}
+
+.cp-kpiBox {
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.cp-kpiBox table,
+.cp-kpiBox td {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  position: relative !important;
+}
+
+.cp-droplist select {
+  background: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  height: 40px;
+  font-family: flamabasic !important;
+  color: #1f303e !important;
+  font-size: 1.3rem !important;
+  width: 325px;
+}
+
+.cp-droplist option,
+.cp-droplist2 option {
+  font-family: flamabasic !important;
+  color: #263746 !important;
+  font-size: 1.3rem !important;
+  cursor: pointer;
+}
+
+.cp-droplist option:hover,
+.cp-droplist2 option:hover {
+  background-color: rgb(128, 128, 128);
+}
+.cp-droplist2 select {
+  background: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  height: 26px;
+  font-family: flamabasic !important;
+  color: #1f303e !important;
+  font-size: 1.2rem !important;
+  width: 325px;
+}
+.KpiBox {
+  display: flex;
+  padding: 5px;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.KpiBox .icon {
+  min-width: 3.5rem;
+  height: 3.5rem;
+  background-size: 3.5rem;
+  background-repeat: no-repeat;
+  background-position: unset;
+  filter: drop-shadow(1px 1px 2px #000000);
+}
+
+.KpiBox .titleKPI,
+.cp-report .titleKPI {
+  width: 100%;
+  font-size: 1rem;
+  font-weight: normal;
+  font-family: flamamedium;
+}
+
+.KpiBox .valueKPI {
+  font-size: 3.2rem;
+  font-weight: bolder;
+  align-self: unset;
+  align-self: end;
+  font-family: flamasemibold;
+}
+
+.KpiBox .comparationKPI {
+  font-size: 1.1rem;
+  align-items: end;
+  gap: 3px;
+  display: flex;
+  align-self: flex-end;
+  padding-bottom: 9px;
+  font-family: flamamedium;
+}
+
+.KpiBox .comparationKPI span {
+  font-weight: bolder;
+}
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}

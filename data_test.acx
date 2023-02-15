@@ -1,0 +1,3 @@
+ SEGNAME=DATA_TEST, 
+   TABLENAME=data_test, 
+   CONNECTION=CON1, $

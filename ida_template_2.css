@@ -1,0 +1,58 @@
+.container2{
+    display: grid;
+    grid-template-columns: repeat(12, [col-start] 1fr);
+    grid-template-rows: 1fr;
+    gap: 11px;
+    padding: 25px;
+    background: #F4F5F8;
+    height: calc(100% - 64px);
+}
+.report1 {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    height: calc(100% - 32px);
+}
+.cp-report .arGridColumnHeading  td{
+    height: 50px;
+    padding-left: 10px;
+}
+.cp-report .arGridColumnHeading td table span {
+    /* height: 50px; */
+    color: #22959E !important;
+}
+.cp-report tr[data-row-type="data"]{
+    height: 50px;
+}
+.cp-report tr[data-row-type="data"] td{
+    box-sizing: border-box;
+    border-bottom: 2px solid #E3E3E3 !important;
+    padding-left: 10px;
+    cursor: default;
+}
+.iconReport.iconProx:before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 7.5px;  
+    background-color: #79C9D1 ;
+    margin-right: 3px;
+}
+.iconReport.iconCumpli:before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 7.5px;  
+    background-color: #22959e ;
+    margin-right: 3px;
+}
+.iconReport.iconNoCumpli:before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 7.5px;  
+    background-color: #FEC502  ;
+    margin-right: 3px;
+}
