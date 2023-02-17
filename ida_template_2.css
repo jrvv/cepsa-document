@@ -1,58 +1,126 @@
-.container2{
-    display: grid;
-    grid-template-columns: repeat(12, [col-start] 1fr);
-    grid-template-rows: 1fr;
-    gap: 11px;
-    padding: 25px;
-    background: #F4F5F8;
-    height: calc(100% - 64px);
+.dialog {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 99; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.dialog-content {
+  position: absolute;
+  z-index: 100;
+  margin: auto;
+  width: 500px;
+  height: 500px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  right: 5px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+span.estado.actual {
+  opacity: 1;
+}
+span.estado {
+  border: 1px solid black;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  font-family: "flamasemibold";
+  opacity: 0.5;
+}
+span.estado.requerido,
+span.estado.cumple {
+  background-color: #1f303e;
+  color: white;
+  opacity: 1;
+}
+.report2.cp-report .arGridColumnHeading td {
+  display: none;
+}
+.report2.cp-report .arGridColumnHeading td table span {
+  /* height: 50px; */
+  color: #22959e !important;
+}
+.report2.cp-report tr[data-row-type="data"] {
+  height: 5px;
+}
+.estados {
+  margin: 11px;
+}
+.container2 {
+  display: grid;
+  grid-template-columns: repeat(12, [col-start] 1fr);
+  grid-template-rows: 1fr;
+  gap: 11px;
+  padding: 25px;
+  background: #f4f5f8;
+  height: calc(100% - 64px);
 }
 .report1 {
-    grid-column: 1 / -1;
-    grid-row: 1;
-    height: calc(100% - 32px);
+  grid-column: 1 / -1;
+  grid-row: 1;
+  height: calc(100% - 32px);
 }
-.cp-report .arGridColumnHeading  td{
-    height: 50px;
-    padding-left: 10px;
+.cp-report .arGridColumnHeading td {
+  height: 50px;
+  padding-left: 10px;
 }
 .cp-report .arGridColumnHeading td table span {
-    /* height: 50px; */
-    color: #22959E !important;
+  /* height: 50px; */
+  color: #22959e !important;
 }
-.cp-report tr[data-row-type="data"]{
-    height: 50px;
+.cp-report tr[data-row-type="data"] {
+  height: 50px;
 }
-.cp-report tr[data-row-type="data"] td{
-    box-sizing: border-box;
-    border-bottom: 2px solid #E3E3E3 !important;
-    padding-left: 10px;
-    cursor: default;
+.cp-report tr[data-row-type="data"] td {
+  box-sizing: border-box;
+  border-bottom: 2px solid #e3e3e3 !important;
+  padding-left: 10px;
+  cursor: default;
 }
 .iconReport.iconProx:before {
-    content: '';
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    border-radius: 7.5px;  
-    background-color: #79C9D1 ;
-    margin-right: 3px;
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 7.5px;
+  background-color: #79c9d1;
+  margin-right: 3px;
 }
 .iconReport.iconCumpli:before {
-    content: '';
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    border-radius: 7.5px;  
-    background-color: #22959e ;
-    margin-right: 3px;
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 7.5px;
+  background-color: #22959e;
+  margin-right: 3px;
 }
 .iconReport.iconNoCumpli:before {
-    content: '';
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    border-radius: 7.5px;  
-    background-color: #FEC502  ;
-    margin-right: 3px;
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 7.5px;
+  background-color: #fec502;
+  margin-right: 3px;
 }

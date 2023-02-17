@@ -10,6 +10,9 @@ body {
   height: 100%;
   width: 100%;
 }
+.hide {
+  display: none;
+}
 
 .ar-dashboard-bar {
   border-radius: 0.3rem;
@@ -258,8 +261,8 @@ div[id$="_ft"] {
 
 .KpiBox .icon {
   min-width: 3.5rem;
-  height: 3.5rem;
-  background-size: 3.5rem;
+  height: 4rem;
+  background-size: 3rem;
   background-repeat: no-repeat;
   background-position: unset;
   filter: drop-shadow(1px 1px 2px #000000);

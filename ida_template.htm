@@ -10,7 +10,7 @@
     <ibi name="metaTag" />
     <ibi name="thirdCss" />
     <style data-ars="y">
-        <ibi name="_EDAHOME/etc/ar_v2/ibxall.css" /><ibi name="_APPROOT/cepsa/ida_font.css" /><ibi name="_APPROOT/cepsa/ida_style.css" /><ibi name="_APPROOT/cepsa/ida_icon_custom.css" /><ibi name="_APPROOT/cepsa/ida_template_1.css" /><ibi name="_APPROOT/cepsa/ida_template_2.css" />
+        <ibi name="_EDAHOME/etc/ar_v2/ibxall.css" /><ibi name="_APPROOT/cepsa2/ida_font.css" /><ibi name="_APPROOT/cepsa2/ida_style.css" /><ibi name="_APPROOT/cepsa2/ida_icon_custom.css" /><ibi name="_APPROOT/cepsa2/ida_template_1.css" /><ibi name="_APPROOT/cepsa2/ida_template_2.css" />
     </style>
     <ibi name="rootCss" />
 
@@ -26,7 +26,8 @@
     <script type="text/javascript" data-ars="y">
 
             <ibi name="_EDAHOME/etc/ar_v2/ibxall.js" />
-            <ibi name="_APPROOT/cepsa/util_document_v2.js" />
+            <ibi name="_APPROOT/cepsa2/util_document_v2.js" />
+            <ibi name="_APPROOT/cepsa2/utils2.js" />
 
 
 
@@ -54,8 +55,8 @@
     <template id="pageTemplate2">
         <div id="page2" data-role="template" class="container">
             <div class="filter-area">
-                <div class="cp-droplist iconSelect dateTo" data-id="Prompt_1"></div>
-                <div class="cp-droplist iconSelect depart" data-id="Prompt_2"></div>
+                <div class="cp-droplist iconSelect dateTo" data-id="Month"></div>
+                <div class="cp-droplist iconSelect depart" data-id="Depar"></div>
 
 
             </div>
@@ -69,7 +70,7 @@
             <div data-id="kpi_alt_mov_mes" class="cp-kpiBox kpiBox7"></div>
 
 
-            <div data-id="ch_aprediza_psm" class="cp-chart chart1"></div>
+            <!---   <div data-id="ch_aprediza_psm" class="cp-chart chart1"></div> -->
 
             <div class="cp-chart chartCumplimiento">
                 <div data-id="ch_cump_global" class="chart2"></div>
@@ -81,7 +82,7 @@
 
             </div>
             <div class="cp-chart chartPersonas">
-                <div class="cp-droplist2 iconSelect depart departPie" data-id="Prompt_3"></div>
+                <div class="cp-droplist2 iconSelect depart departPie" data-id="DeparPie"></div>
                 <div data-id="ch_num_per_pues" class="chart3"></div>
             </div>
 
@@ -94,7 +95,15 @@
     <template id="pageTemplate3">
         <div id="page3" data-role="template" class="container2">
             <div data-id="tbl_summary" class="cp-report report1"></div>
+            <div class="dialog">
+                <div class="dialog-content">
+                    <span class="close">&times;</span>
+                    <div class="cp-droplist2 iconSelect employe hide" data-id="Employee"></div>
+                    <div data-id="tbl_detail" class="cp-report report2"></div>
+                </div>
+            </div>
         </div>
+
     </template>
 
 
@@ -119,9 +128,72 @@
             document.querySelector('div [data-id="' + charts[cumpliento] + '"').classList.toggle('fadeInLeft')
 
         }
+        function showDetail(idEmploye) {
+            document.querySelector('.dialog').style.display = 'block';
+            utils.setValueSelect('EMPLOYEE', idEmploye)
+            utilsDocument.putElements();
+        }
+        function closeDetail() {
+            document.querySelector('.dialog').style = 'none';
+        }
+        async function init() {
+            var a = await utilsDocument.init();
+            debugger
+            utils.sincronizeSelects('DEPAR', 'DEPARPIE')
+            utils.sincronizeSelects('DEPARPIE', 'DEPAR')
+            document.querySelector('.dialog-content .close')?.addEventListener('click', closeDetail)
+            /*   document.querySelector('#combobox_dsDEPAR')?.addEventListener('change', (e) => {
+                   debugger
+                   let value = e.srcElement.value,
+                       target = document.querySelector('#combobox_dsDEPARPIE');
+                   target.value = value;
+                   if (target.value == '') {
+                       target.value = target.querySelector('option:first-child').value;
+                   }
+                   ibiCompound.drawObjectsPtr['DEPARPIE'].updateValues();
+                   ibiCompound.drawObjectsPtr['DEPARPIE'].doFilter()
+   
+               })
+   
+   
+               var targetNode = document.getElementById('combobox_dDEPAR');
+               var config = { attributes: true, childList: true };
+               var callback = function (mutationsList) {
+                   for (var mutation of mutationsList) {
+                       if (mutation.type == 'childList') {
+                           document.querySelector('#combobox_dsDEPAR')?.addEventListener('change', (e) => {
+                               debugger
+                               let value = e.srcElement.value,
+                                   target = document.querySelector('#combobox_dsDEPARPIE');
+                               target.value = value;
+                               if (target.value == '') {
+                                   target.value = target.querySelector('option:first-child').value;
+                               }
+                               ibiCompound.drawObjectsPtr['DEPARPIE'].updateValues();
+                               ibiCompound.drawObjectsPtr['DEPARPIE'].doFilter()
+   
+                           })
+                       }
+                       else if (mutation.type == 'attributes') {
+                           console.log('The ' + mutation.attributeName + ' attribute was modified.');
+                       }
+                   }
+               };
+               var observer = new MutationObserver(callback);
+   
+               // Start observing the target node for configured mutations
+               observer.observe(targetNode, config);*/
 
-        var reports = <ibi name="reportObject" />;
-        utilsDocument.init()
+        }
+        let reports = <ibi name="reportObject" />;
+        init();
+        //para seleccionar la pestaña top.KK5[2].select()
+
+
+
+
+
+
         //select una tab top.KK2.getLayoutElements()[0].reports[0].dashboardComponent.dashboard.layoutTabs.tabs[1].select()
     </script>
 

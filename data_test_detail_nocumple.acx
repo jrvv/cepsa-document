@@ -1,0 +1,3 @@
+ SEGNAME=DATA_TEST_DETAIL_NOCUMPLE, 
+   TABLENAME=data_test_detail_nocumple, 
+   CONNECTION=CON1, $

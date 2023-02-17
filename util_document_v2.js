@@ -260,8 +260,8 @@ var utilsDocument = (function () {
 	function calculateDiv() {
 		$('body').append('<div id=calculando style="z-index:9999;background: red;position:absolute;top:0px;bottom:0px;right:0px;left:0px;display:none"></div>')
 	}
-	function _init() {
-		calculateDiv()
+	function inicialitate(resolve, reject) {
+		calculateDiv();
 		console.log('Inicianzo colocacion');
 		handle = getHandle();
 		templates = getPageTemplates();
@@ -274,8 +274,10 @@ var utilsDocument = (function () {
 		top.KK2 = handle;
 		top.KK3 = root;
 		arrPages = generatePagesExtruture();
-		top.KK4 = arrPages
+		top.KK4 = arrPages;
+		top.KK5 = layoutTabs;
 		//para poner el titulo es  $AR.dashboard.reportComponents[0][0].tableTitleTextContainer.classList.remove("hidden");
+
 		document.addEventListener('arDashboardLoaded', function () {
 
 			assignTemplates()
@@ -283,12 +285,11 @@ var utilsDocument = (function () {
 			deleteNotTemplate();
 			changeTabEvent();
 			var myObserver = new ResizeObserver((entries) => {
-
 				putElements();
-
 			});
 			var divObserver = document.getElementById('ARDashboard');
 			myObserver.observe(divObserver);
+			resolve('dd')
 			//no me convence
 		});
 
@@ -301,7 +302,11 @@ var utilsDocument = (function () {
 		document.addEventListener('arMaximizeDashboard', function (e) {
 			$AR.dashboard.measure();
 		});
-
+	}
+	function _init() {
+		return new Promise((resolve, reject) => {
+			inicialitate(resolve, reject);
+		})
 	}
 	var handle, templates, root, arrText, arrObject, layouts, arrPages, layoutTabs;
 	return {

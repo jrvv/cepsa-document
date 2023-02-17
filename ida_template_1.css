@@ -132,7 +132,7 @@
 }
 
 .detalleCharts {
-  height: 15rem;
+  height: 13rem;
   padding-top: 0px;
 }
 .chart4,
@@ -202,10 +202,10 @@ g:has(> [class~="rowLabel!r0!"]) {
   row-gap: 10px;
   grid-template-areas:
     "filters filters filters filters filters filters"
-    "kpi1 kpi3 barline1 barline1 barline1 barline4"
-    "kpi7 kpi5 barline1 barline1 barline1 barline4"
-    "kpi6 kpi2 barline1 barline1 barline1 barline4"
-    "barline2 barline2 barline2 barline2 pieChart4 pieChart4";
+    "kpi1 kpi3 barline2 barline2 barline2 barline2"
+    "kpi7 kpi5 barline2 barline2 barline2 barline2"
+    "kpi6 kpi2 barline2 barline2 barline2 barline2"
+    "barline4 barline4 pieChart4 pieChart4 pieChart4 pieChart4";
   padding: 25px;
   background: #f4f5f8;
 }
