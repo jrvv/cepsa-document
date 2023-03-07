@@ -5,7 +5,7 @@ var utils = (function () {
             divTarget = ibiCompound.drawObjectsPtr[target].objs;
         let changeEvent = () => {
             divOrigin.querySelector('select')?.addEventListener('change', (e) => {
-                debugger
+
                 let value = e.srcElement.value,
                     targetSelect = divTarget.querySelector('select');
                 targetSelect.value = value;
